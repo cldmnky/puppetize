@@ -1,0 +1,12 @@
+[submodule "modules/apt"]
+	path = modules/apt
+	url = http://github.com/puppetlabs/puppet-apt.git
+[submodule "modules/firewall"]
+	path = modules/firewall
+	url = http://github.com/puppetlabs/puppetlabs-firewall.git
+[submodule "modules/mysql"]
+	path = modules/mysql
+	url = http://github.com/puppetlabs/puppetlabs-mysql.git
+[submodule "modules/stdlib"]
+	path = modules/stdlib
+	url = http://github.com/puppetlabs/puppetlabs-stdlib.git

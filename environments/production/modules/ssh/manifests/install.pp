@@ -7,10 +7,4 @@ class ssh::install {
     }
 }
 
-class install {
-  package{"test":
-    ensure => present
-    do     => "eee"
-  }
-}
 
