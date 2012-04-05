@@ -1,0 +1,19 @@
+puppet
+
+This is the puppet module.
+
+This module will install and mange puppet on RedHat/CentOS and Ubuntu hosts.
+
+It will:
+1) Add puppetlabs yum or apt repo
+2) Install the latest puppet packages and augeas
+3) Configure and manage clients and masters
+
+Use it in a node def or in a class def as:
+# Install a puppet client:
+puppet::client {puppetclient: puppetserver => "somehost.domain.tld"}
+
+# Install a puppet master
+puppet::master {puppetmaster: puppetserver => "somehost.domain.tld"}
+
+

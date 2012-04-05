@@ -1,0 +1,12 @@
+node 'cli01.customer.tld' {
+    # This is a generic mysql database server
+    # Include the production class from resources.pp
+    include production
+    include mysql
+    # Node specific Firewall rules below
+    @firewall {"306 allow mysql traffic":
+        proto  => "tcp",
+        dport  => "3306",
+        action => "accept"
+    }
+}

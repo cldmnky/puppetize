@@ -1,0 +1,9 @@
+set spec[user = "<%= who %>"]/user <%= who %>
+set spec[user = "<%= who %>"]/host_group/host ALL
+<% counter = 1 %>
+<% commands.each do |command| -%>
+set spec[user = "<%= who %>"]/host_group/command[<%= counter %>] <%= command %>
+set spec[user = "<%= who %>"]/host_group/command[<%= counter %>]/runas_user <%= as_user %>
+set spec[user = "<%= who %>"]/host_group/command[<%= counter %>]/tag <%= pass %> 
+<% counter += 1 %>
+<% end -%>

@@ -1,0 +1,39 @@
+set Port <%= has_variable?("port") ? port: '22' %>
+set Protocol <%= has_variable?('protocol')? protocol: '2' %>
+set ServerKeyBits <%= has_variable?('serverkeybits')? serverkeybits: '1024' %>
+set LogLevel <%= has_variable?('loglevel')? loglevel: 'INFO' %>
+set LoginGraceTime <%= has_variable?('logingracetime')? logingraceteime: '2m' %>
+set PermitRootLogin <%= has_variable?('permitrootlogin')? permitrootlogin: 'yes' %>
+set StrictModes  <%= has_variable?('strictmodes')? strictmodes: 'yes' %>
+set MaxAuthTries 6
+set MaxSessions 10
+set RSAAuthentication yes
+set PubkeyAuthentication yes
+set AuthorizedKeysFile	.ssh/authorized_keys
+set RhostsRSAAuthentication no
+set HostbasedAuthentication no
+set IgnoreUserKnownHosts no
+set IgnoreRhosts yes
+set PasswordAuthentication <%= has_variable?('passwordauthentication')? passwordauthentication: 'yes' %>
+set UsePAM <%= has_variable?('usepam')? usepam: 'yes' %>
+set PermitEmptyPasswords no
+set ChallengeResponseAuthentication no
+set KerberosAuthentication no
+set KerberosOrLocalPasswd yes
+set KerberosTicketCleanup yes
+set GSSAPIAuthentication yes
+set GSSAPICleanupCredentials yes
+set GSSAPIStrictAcceptorCheck yes
+set GSSAPIKeyExchange no
+set AllowAgentForwarding yes
+set AllowTcpForwarding yes
+set X11Forwarding yes
+set PrintMotd yes
+set UseLogin no
+set UsePrivilegeSeparation yes
+set PermitUserEnvironment no
+set UseDNS yes
+set MaxStartups 10
+set PermitTunnel no
+set ChrootDirectory none
+set AllowGroups/1 <%= has_variable?('allowgroups')? allowgroups: '' %>

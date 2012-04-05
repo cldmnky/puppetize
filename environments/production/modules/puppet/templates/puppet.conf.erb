@@ -1,0 +1,21 @@
+[main]
+    logdir = /var/log/puppet
+    rundir = /var/run/puppet
+    ssldir = $vardir/ssl
+    modulepath = $confdir/modules
+    manifest = $confdir/manifests/unknown_environment.pp
+
+[production]
+    manifest = $confdir/environments/production/manifests/site.pp
+    modulepath = $confdir/modules:$confdir/environments/production/modules
+
+[testing]
+    manifest = $confdir/environments/testing/manifests/site.pp
+    modulepath = $confdir/modules:$confdir/environments/testing/modules
+
+[agent]
+    classfile = $vardir/classes.txt
+    localconfig = $vardir/localconfig
+    pluginsync = true
+    report = true
+    server = <%= puppetserver %>

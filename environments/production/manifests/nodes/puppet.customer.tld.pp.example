@@ -1,0 +1,12 @@
+node 'puppet.customer.tld' {
+    # This is our puppetmaster
+    puppet::master { "puppet master": puppetversion => "2.7.12-1.el6"}
+    # Include the production class from resources.pp
+    include production
+    # Node specific Firewall rules below
+    @firewall {"0101 allow puppetmaster traffic":
+        proto  => "tcp",
+        dport  => "8140",
+        action => "accept"
+    }
+}
