@@ -30,8 +30,12 @@ class puppet::install::master($puppetversion) inherits puppet::install {
 }
 
 class puppet::install::client($puppetversion) inherits puppet::install {
-    package { "puppet":
+    package { "puppet-common":
         ensure  => $puppetversion,
         require => Class["puppet::repo"] 
+    }
+    package { "puppet":
+        ensure  => $puppetversion,
+        require => Package["puppet-common"] 
     }
 }
