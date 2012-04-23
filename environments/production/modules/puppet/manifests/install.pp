@@ -14,8 +14,18 @@ class puppet::install {
 }
 
 class puppet::install::master($puppetversion) inherits puppet::install {
-    package { "puppet-server":
-        ensure => $puppetversion,
+  case $::operatingsystem {
+      ubuntu, debian: {
+        package{ 'puppetmaster':
+          ensure  => $puppetversion
+        }
+      }
+      redhat, centos: {
+          package { "puppet-server":
+              ensure => $puppetversion,
+          }
+      }
+      default: {  }
     }
 }
 

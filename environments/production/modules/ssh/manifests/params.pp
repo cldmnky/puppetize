@@ -5,7 +5,7 @@
 class ssh::params {
     case $::operatingsystem {
         ubuntu, debian: {
-            $packages = 'openssh'
+            $packages = ['openssh-server', 'openssh-client']
         }
         redhat, centos: {
             $packages = ['openssh', 'openssh-server', 'openssh-clients']

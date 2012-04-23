@@ -12,5 +12,3 @@ class puppet::client::config($puppetserver){
         notify  => Class["puppet::client::service"],
     }
 }
-
-

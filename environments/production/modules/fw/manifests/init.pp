@@ -1,17 +1,9 @@
 # Class: fw
-#
-# This module manages fw
-#
-# Parameters:
-#
-# Actions:
-#
-# Requires:
-#
-# Sample Usage:
-#
-# [Remember: No empty lines between comments and class definition]
-class fw {
-    
-
+class fw (
+    $packages = $fw::params::packages,
+) inherits fw::params {
+    anchor { 'fw::start': } ->
+    class { 'fw::file': } ->
+    class { 'fw::install': } ~>
+    anchor { 'fw::end': }
 }
