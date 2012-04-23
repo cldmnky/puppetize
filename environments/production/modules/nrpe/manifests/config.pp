@@ -9,7 +9,7 @@ class nrpe::config {
   }
   file {"$nrpe::config_dir_d/varmdo.cfg":
     ensure  => present,
-    content => template('nrpe/varmdo.cfg.erb'),
+    content => template('nrpe/default.cfg.erb'),
     require => Class['nrpe::install'],
     notify  => Class['nrpe::service']
   }
