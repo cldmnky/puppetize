@@ -25,6 +25,6 @@ class puppet::params {
     }
     default: {
       fail('Unknown OS')
-    
+    }
   }
 }
