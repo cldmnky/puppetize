@@ -1,3 +1,5 @@
+#! /usr/bin/env puppet
+# Author: Magnus Bengtsson <magnus.bengtsson@redbridge.se>
 #
 #
 #

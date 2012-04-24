@@ -16,7 +16,7 @@ class puppet::params {
     'centos', 'redhat': {
       $augpkgs = ["augeas", "ruby-augeas"],
       $puppetpkgs = ['puppet'],
-      $puppetmasterpks = ['puppet-server']
+      $puppetmasterpkgs = ['puppet-server']
     }
     'ubuntu', 'debian': {
       $augpkgs = ["augeas-tools", "libaugeas-ruby", "libaugeas0"],
@@ -25,6 +25,6 @@ class puppet::params {
     }
     'default': {
       fail('Unknown OS')
-    }
+    
   }
 }
