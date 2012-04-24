@@ -3,8 +3,9 @@
 #
 #
 class puppet::install {
-    package { $puppet::augpkgs:
-      ensure  => present,
-      require => Class['puppet::repo']
-    }
+  include puppet::repo
+  package { $puppet::augpkgs:
+    ensure  => present,
+    require => Class['puppet::repo']
+  }
 }
