@@ -13,7 +13,7 @@
 # Sample Usage:
 #
 class puppet::install::master($puppetversion) inherits puppet::install {
-  package{"$puppet::puppetmasterpkgs":
+  package{ $puppet::puppetmasterpkgs:
     ensure  => $puppetversion
   }
 }

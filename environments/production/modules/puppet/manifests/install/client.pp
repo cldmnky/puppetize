@@ -12,7 +12,7 @@
 #
 # Sample Usage:
 class puppet::install::client($puppetversion) inherits puppet::install {
-    package { "$puppet::puppetpkgs":
+    package { $puppet::puppetpkgs:
       ensure  => $puppetversion,
     }
 }
