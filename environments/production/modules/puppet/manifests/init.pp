@@ -16,5 +16,5 @@ class puppet (
   $puppetpkgs = $puppet::params::puppetpkgs,
   $puppetmasterpkgs = $puppet::params::puppetmasterpkgs
 ) inherits puppet::params {
-  info('Running puppet module')
+  info("Running puppet module packages: $augpkgs $puppetpkgs $puppetmasterpkgs")
 }
