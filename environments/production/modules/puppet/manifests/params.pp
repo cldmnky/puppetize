@@ -13,17 +13,17 @@
 class puppet::params {
   $module  = "puppet"
   case $::operatingsystem {
-    'centos', 'redhat': {
-      $augpkgs = ["augeas", "ruby-augeas"],
+    centos, redhat: {
+      $augpkgs = ['augeas', 'ruby-augeas'],
       $puppetpkgs = ['puppet'],
       $puppetmasterpkgs = ['puppet-server']
     }
-    'ubuntu', 'debian': {
+    ubuntu, debian: {
       $augpkgs = ["augeas-tools", "libaugeas-ruby", "libaugeas0"],
       $puppetpkgs = ['puppet-common', 'puppet'],
-      $puppetmasterpks = ['puppetmaster']
+      $puppetmasterpkgss = ['puppetmaster']
     }
-    'default': {
+    default: {
       fail('Unknown OS')
     
   }
